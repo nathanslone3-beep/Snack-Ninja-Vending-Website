@@ -26,6 +26,19 @@ const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
 await page.goto(url, { waitUntil: 'networkidle0' });
+
+// Unhide all scroll-reveal elements so full-page screenshots capture them
+await page.evaluate(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.remove('hidden');
+    el.classList.add('in');
+  });
+  // Also handle any reveal-on-scroll pattern
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+    el.classList.add('revealed');
+  });
+});
+
 await page.screenshot({ path: outputPath, fullPage: true });
 await browser.close();
 

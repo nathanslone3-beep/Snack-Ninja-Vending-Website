@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.snackninjavending.com/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.snackninjavending.com/images/cooler-product.png</image:loc>
+      <image:title>Snack Ninja AI Smart Cooler — cashless vending machine Louisville KY</image:title>
+      <image:caption>Area 502 AI Smart Cooler by Snack Ninja Vending</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.snackninjavending.com/images/cooler-front.jpg</image:loc>
+      <image:title>Area 502 AI Smart Cooler front view — Louisville KY vending machine</image:title>
+      <image:caption>Front view of Snack Ninja smart vending cooler</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.snackninjavending.com/images/cooler-side.jpg</image:loc>
+      <image:title>Area 502 AI Smart Cooler side view</image:title>
+      <image:caption>Side view of Snack Ninja smart vending cooler</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.snackninjavending.com/images/logo-text.png</image:loc>
+      <image:title>Snack Ninja Vending logo</image:title>
+    </image:image>
+  </url>
+</urlset>
