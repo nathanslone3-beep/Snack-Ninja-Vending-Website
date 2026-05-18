@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our AI Smart Coolers | Snack Ninja Vending — Louisville, KY</title>
+  <meta name="description" content="Modern, branded AI smart coolers with cashless payments, 24/7 monitoring, and real-time inventory analytics. Zero cost to you. Louisville, KY." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.snackninjavending.com/our-ai-smart-coolers" />
+  <meta property="og:title" content="AI Smart Coolers | Snack Ninja Vending" />
+  <meta property="og:image" content="https://www.snackninjavending.com/images/Gallery photos/Area 502 front.jpeg" />
+  <meta property="og:url" content="https://www.snackninjavending.com/our-ai-smart-coolers" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* Stat row */
+    .stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin: 3rem 0; }
+    .stat-card { text-align: center; padding: 2rem 1.5rem; border-radius: 12px; }
+    .stat-card .num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; letter-spacing: 0.04em; line-height: 1; margin-bottom: 0.4rem; }
+    .stat-card .lbl { font-size: 0.82rem; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; }
+    @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr; } }
+
+    /* Spec grid */
+    .spec-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    @media (max-width: 900px) { .spec-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .spec-grid { grid-template-columns: 1fr; } }
+
+    /* Photo strip */
+    .photo-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1rem; }
+    .photo-strip-item { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; border: 1px solid var(--border); }
+    .photo-strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .photo-strip-item:hover img { transform: scale(1.05); }
+    @media (max-width: 640px) { .photo-strip { grid-template-columns: 1fr 1fr; } }
+
+    /* Feature split (reuse pattern) */
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .feat-img-wrap { position: relative; }
+    .feat-img-frame { border-radius: 16px; overflow: hidden; border: 1px solid rgba(37,99,235,0.2); box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 60px rgba(37,99,235,0.12); }
+    .feat-img { width: 100%; object-fit: cover; max-height: 560px; filter: brightness(0.88) saturate(1.1); }
+    @media (max-width: 768px) { .feat-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+    .check-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+    .check-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .check-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+    .check-dot svg { width: 10px; height: 10px; }
+    .check-item strong { font-family: 'Barlow', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); display: block; margin-bottom: 2px; }
+    .check-item p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link" aria-label="Snack Ninja Vending Home">
+      <img src="images/ninja head logo transparent.png" alt="" class="logo-icon" />
+      <div class="logo-text-stack">
+        <span class="logo-name">SNACK <span>NINJA</span></span>
+        <span class="logo-subtext">Vending</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="our-ai-smart-coolers.html" class="nav-link active">Smart Coolers</a>
+      <a href="our-process.html" class="nav-link">Our Process</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="btn-primary nav-cta">Get Free Evaluation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="nav-link" onclick="closeNav()">Home</a>
+    <a href="our-ai-smart-coolers.html" class="nav-link" onclick="closeNav()">Smart Coolers</a>
+    <a href="our-process.html" class="nav-link" onclick="closeNav()">Our Process</a>
+    <a href="services.html" class="nav-link" onclick="closeNav()">Services</a>
+    <a href="contact.html" class="nav-link" onclick="closeNav()">Contact</a>
+    <a href="contact.html" class="btn-primary" onclick="closeNav()">Get Free Evaluation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Our Equipment</p>
+    <h1>Smart Coolers.<br><span class="grad-text">Better Results.</span></h1>
+    <p>Modern design. Cheaper prices. Zero hassle. Our AI-powered coolers are built for today's fast, cashless, connected world.</p>
+    <div class="btn-row" style="margin-top:2rem;">
+      <a href="contact.html" class="btn-primary">Request Your Free Cooler</a>
+      <a href="our-process.html" class="btn-ghost">See Our Process</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SPLIT -->
+<section class="section-noise" style="padding:6rem 0;">
+  <div class="glow-blue-tl"></div>
+  <div class="glow-cyan-r"></div>
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <div class="feat-grid">
+      <div class="feat-img-wrap reveal">
+        <div class="feat-img-frame">
+          <img src="images/Gallery photos/Area 502 front.jpeg" alt="Snack Ninja AI smart cooler front view" class="feat-img" />
+        </div>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="eyebrow">The Cooler That Thinks For Itself</p>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:1rem;">Everything You Want.<br><span class="grad-text">Nothing You Don't.</span></h2>
+        <p style="color:var(--muted);font-size:1rem;margin-bottom:2.5rem;line-height:1.7;">Premium machines that enhance any environment. AI-powered inventory, real-time analytics, and cashless checkout — all in a sleek, brandable design.</p>
+        <ul class="check-list">
+          <li class="check-item">
+            <div class="check-dot"><svg fill="none" stroke="#2563EB" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Modern, Branded Design</strong><p>Custom-wrapped to match your space. Looks like it belongs, because it does.</p></div>
+          </li>
+          <li class="check-item">
+            <div class="check-dot"><svg fill="none" stroke="#2563EB" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Automated Restock Alerts</strong><p>We get notified when stock runs low — so we're always ahead of the curve.</p></div>
+          </li>
+          <li class="check-item">
+            <div class="check-dot"><svg fill="none" stroke="#2563EB" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Fully Cashless &amp; Mobile Payments</strong><p>Credit, debit, Apple Pay, Google Pay — fast and frictionless every time.</p></div>
+          </li>
+          <li class="check-item">
+            <div class="check-dot"><svg fill="none" stroke="#2563EB" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Customizable Products</strong><p>Product mix tailored to your location's audience — always the right selection.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STAT ROW -->
+    <div class="stat-row reveal">
+      <div class="stat-card card-blue">
+        <div class="num" style="color:var(--cyan);">$0</div>
+        <div class="lbl">Equipment Cost to You</div>
+      </div>
+      <div class="stat-card card">
+        <div class="num" style="color:var(--blue);">24/7</div>
+        <div class="lbl">Remote Monitoring</div>
+      </div>
+      <div class="stat-card card-cyan">
+        <div class="num" style="color:var(--cyan);">60s</div>
+        <div class="lbl">Average Install Time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC GRID -->
+<section class="section-base">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="eyebrow">Everything You'd Want</p>
+      <h2>Nothing You Don't.<br><span class="grad-text">Need.</span></h2>
+    </div>
+    <div class="spec-grid">
+      <div class="card reveal">
+        <div class="icon-box blue-icon">
+          <svg width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+        </div>
+        <div class="card-h3">Fully Cashless</div>
+        <p class="card-body">Credit, debit, Apple Pay, Google Pay, and tap-to-pay support.</p>
+      </div>
+      <div class="card reveal reveal-d1">
+        <div class="icon-box cyan-icon">
+          <svg width="20" height="20" fill="none" stroke="#00BFFF" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <div class="card-h3">24/7 Monitoring</div>
+        <p class="card-body">Remote diagnostics around the clock. We know before you do.</p>
+      </div>
+      <div class="card reveal reveal-d2">
+        <div class="icon-box blue-icon">
+          <svg width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="card-h3">AI Inventory</div>
+        <p class="card-body">Tracks what sells by time of day, location, and season.</p>
+      </div>
+      <div class="card reveal reveal-d3">
+        <div class="icon-box cyan-icon">
+          <svg width="20" height="20" fill="none" stroke="#00BFFF" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="card-h3">Custom Branding</div>
+        <p class="card-body">Custom vinyl wrap to match your space, brand, or aesthetic.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-box blue-icon">
+          <svg width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-h3">Curated Products</div>
+        <p class="card-body">Tailored product selection for your specific audience and location.</p>
+      </div>
+      <div class="card reveal reveal-d1">
+        <div class="icon-box cyan-icon">
+          <svg width="20" height="20" fill="none" stroke="#00BFFF" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="card-h3">Zero Maintenance</div>
+        <p class="card-body">All repairs, servicing, and maintenance handled entirely by us.</p>
+      </div>
+      <div class="card reveal reveal-d2">
+        <div class="icon-box blue-icon">
+          <svg width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="card-h3">Sales Insights</div>
+        <p class="card-body">Best-sellers by day, time, and location. Data drives every restock.</p>
+      </div>
+      <div class="card reveal reveal-d3">
+        <div class="icon-box cyan-icon">
+          <svg width="20" height="20" fill="none" stroke="#00BFFF" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="card-h3">Reliable Operation</div>
+        <p class="card-body">Remote diagnostics prevent issues before they ever impact sales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="eyebrow">In the Field</p>
+      <h2>Snack Ninja<br><span class="grad-text">In Action</span></h2>
+    </div>
+    <div class="photo-strip reveal">
+      <div class="photo-strip-item"><img src="images/Gallery photos/Area 502 front.jpeg" alt="Smart cooler front view" loading="lazy" /></div>
+      <div class="photo-strip-item"><img src="images/Gallery photos/Area 502 side.jpeg" alt="Smart cooler side view in lobby" loading="lazy" /></div>
+      <div class="photo-strip-item"><img src="images/Gallery photos/machine-collage.png" alt="Snack Ninja smart cooler machine lineup" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="callout-strip">
+  <div class="section-inner text-center reveal" style="position:relative;z-index:2;">
+    <p class="eyebrow">Ready to Upgrade?</p>
+    <h2 class="callout-h2">Installation Starts at<br><span class="grad-text">Exactly $0</span></h2>
+    <p style="color:var(--muted);max-width:480px;margin:0 auto 2rem;">No equipment purchase. No setup fees. No contracts. Just a premium smart cooler running in your space — at no cost to you.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="contact.html" class="btn-primary">Request Your Free Cooler</a>
+      <a href="our-process.html" class="btn-ghost">See Our Process</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+    <div>
+      <a href="index.html" class="logo-link" aria-label="Snack Ninja Vending Home" style="margin-bottom:0.75rem;">
+        <img src="images/ninja head logo transparent.png" alt="" class="logo-icon" />
+        <div class="logo-text-stack">
+          <span class="logo-name">SNACK <span>NINJA</span></span>
+          <span class="logo-subtext">Vending</span>
+        </div>
+      </a>
+      <p style="max-width:240px;margin-top:0.75rem;font-size:0.875rem;color:var(--muted);line-height:1.6;">Smart Vending Solutions for Modern Spaces.<br>AI-powered. Zero cost. Fully managed.</p>
+    </div>
+    <div>
+      <p class="footer-col-head">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="our-ai-smart-coolers.html" class="nav-link">Smart Coolers</a></li>
+        <li><a href="our-process.html" class="nav-link">Our Process</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:SnackNinjaVending@gmail.com" class="nav-link">SnackNinjaVending@gmail.com</a></li>
+        <li><a href="tel:5023543244" class="nav-link">502.354.3244</a></li>
+        <li><span style="font-size:0.875rem;color:var(--muted);">Louisville, KY &amp; Surrounding Areas</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Snack Ninja Vending LLC. All rights reserved.</p>
+    <p>Louisville, KY · <span class="cyan">502</span>.354.3244</p>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Snack Ninja Vending — Smart Coolers for Every Space Louisville KY</title>
+  <meta name="description" content="AI smart cooler vending for luxury apartments, offices, gyms, hotels, and warehouses in Louisville, KY. Zero cost, fully managed." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.snackninjavending.com/services" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .service-stack { display: flex; flex-direction: column; gap: 2rem; }
+    .svc-card {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 400px;
+      background: var(--dark); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .svc-card:hover { border-color: rgba(37,99,235,0.4); box-shadow: 0 20px 60px rgba(37,99,235,0.1); }
+    .svc-card.flip { direction: rtl; }
+    .svc-card.flip > * { direction: ltr; }
+
+    .svc-img { position: relative; overflow: hidden; }
+    .svc-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(1.1); transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .svc-card:hover .svc-img img { transform: scale(1.04); }
+    .svc-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, transparent 60%); }
+
+    .svc-copy { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .svc-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 4px; padding: 0.3rem 0.75rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan); margin-bottom: 1.25rem;
+      align-self: flex-start;
+    }
+    .svc-tag.alt { background: rgba(0,191,255,0.08); border-color: rgba(0,191,255,0.2); color: var(--cyan); }
+    .svc-h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 0.04em; color: var(--white); line-height: 1.05; margin-bottom: 0.75rem; }
+    .svc-body { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .svc-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.75rem; }
+    .svc-bullets li { font-size: 0.84rem; color: var(--white); display: flex; align-items: center; gap: 0.5rem; }
+    .svc-bullets li::before { content: "→"; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .svc-card, .svc-card.flip { grid-template-columns: 1fr; direction: ltr; }
+      .svc-img { height: 240px; }
+      .svc-copy { padding: 2rem 1.5rem; }
+      .svc-h3 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link" aria-label="Snack Ninja Vending Home">
+      <img src="images/ninja head logo transparent.png" alt="" class="logo-icon" />
+      <div class="logo-text-stack">
+        <span class="logo-name">SNACK <span>NINJA</span></span>
+        <span class="logo-subtext">Vending</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="our-ai-smart-coolers.html" class="nav-link">Smart Coolers</a>
+      <a href="our-process.html" class="nav-link">Our Process</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="btn-primary nav-cta">Get Free Evaluation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="nav-link" onclick="closeNav()">Home</a>
+    <a href="our-ai-smart-coolers.html" class="nav-link" onclick="closeNav()">Smart Coolers</a>
+    <a href="our-process.html" class="nav-link" onclick="closeNav()">Our Process</a>
+    <a href="services.html" class="nav-link" onclick="closeNav()">Services</a>
+    <a href="contact.html" class="nav-link" onclick="closeNav()">Contact</a>
+    <a href="contact.html" class="btn-primary" onclick="closeNav()">Get Free Evaluation</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Where We Work</p>
+    <h1>Solutions for<br><span class="grad-text">Every Space</span></h1>
+    <p>Wherever people gather, a Snack Ninja smart cooler turns any location into a premium amenity destination — at zero cost to you.</p>
+    <div class="btn-row" style="margin-top:2rem;">
+      <a href="contact.html" class="btn-primary">Get Your Free Cooler</a>
+      <a href="our-process.html" class="btn-ghost">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-noise" style="padding:6rem 0;">
+  <div class="glow-blue-tl"></div>
+  <div class="glow-cyan-r"></div>
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <div class="service-stack">
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="images/luxury apartment.webp" alt="Luxury apartment building exterior" loading="lazy" />
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-copy">
+          <span class="svc-tag">Luxury Apartments</span>
+          <h3 class="svc-h3">Apartment Communities</h3>
+          <p class="svc-body">Increase resident satisfaction and generate passive revenue. In a competitive rental market, premium amenities close leases — and a smart cooler costs you nothing to offer.</p>
+          <ul class="svc-bullets">
+            <li>Luxury amenity upgrade at $0 cost</li>
+            <li>Increases property value perception</li>
+            <li>24/7 self-service for residents</li>
+            <li>Zero property management required</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Get Started →</a>
+        </div>
+      </div>
+
+      <div class="svc-card flip reveal">
+        <div class="svc-img">
+          <img src="images/stock-office.jpg" alt="Modern office workplace" loading="lazy" />
+          <div class="svc-img-overlay" style="background:linear-gradient(135deg,rgba(0,191,255,0.08) 0%,transparent 60%);"></div>
+        </div>
+        <div class="svc-copy">
+          <span class="svc-tag alt">Offices &amp; Workplaces</span>
+          <h3 class="svc-h3">Offices &amp; Workplaces</h3>
+          <p class="svc-body">Give your team a premium perk that boosts morale with zero admin overhead. Convenient 24/7 access without adding staff — a benefit your employees will actually notice.</p>
+          <ul class="svc-bullets">
+            <li>Boosts employee satisfaction and morale</li>
+            <li>24/7 access without adding staff</li>
+            <li>Fully managed restocking on our schedule</li>
+            <li>Custom branded wrap for your space</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Get Started →</a>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="images/Gym exterior.webp" alt="Gym and fitness center exterior" loading="lazy" style="filter:brightness(0.65) saturate(1.2);" />
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-copy">
+          <span class="svc-tag">Gyms &amp; Fitness Centers</span>
+          <h3 class="svc-h3">Gyms &amp; Fitness Centers</h3>
+          <p class="svc-body">Fuel members before and after workouts with curated, healthy options. Zero disruption to your operations — just a premium amenity your members will love.</p>
+          <ul class="svc-bullets">
+            <li>High-protein and healthy snack options</li>
+            <li>No vending contracts or commitments</li>
+            <li>Complements your existing amenity offering</li>
+            <li>Zero disruption to daily operations</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Get Started →</a>
+        </div>
+      </div>
+
+      <div class="svc-card flip reveal">
+        <div class="svc-img">
+          <img src="images/hotel.webp" alt="Hotel exterior" loading="lazy" />
+          <div class="svc-img-overlay" style="background:linear-gradient(135deg,rgba(0,191,255,0.08) 0%,transparent 60%);"></div>
+        </div>
+        <div class="svc-copy">
+          <span class="svc-tag alt">Hotels &amp; Hospitality</span>
+          <h3 class="svc-h3">Hotels &amp; Hospitality</h3>
+          <p class="svc-body">Elevate the guest experience with premium convenience. Modern travelers expect modern amenities — give them 24/7 cashless access to snacks and drinks without adding overhead.</p>
+          <ul class="svc-bullets">
+            <li>Elevates the guest experience instantly</li>
+            <li>24/7 availability for guests at any hour</li>
+            <li>Premium product curation for hospitality guests</li>
+            <li>Fully managed — zero work for your staff</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Get Started →</a>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="images/warehouse exterior.webp" alt="Warehouse and industrial building exterior" loading="lazy" style="filter:brightness(0.6) saturate(0.9);" />
+          <div class="svc-img-overlay"></div>
+        </div>
+        <div class="svc-copy">
+          <span class="svc-tag">Warehouses &amp; Industrial</span>
+          <h3 class="svc-h3">Warehouses &amp; Industrial</h3>
+          <p class="svc-body">Keep workers fueled on long shifts without adding any management burden. A smart cooler in your facility means less downtime, more productivity, and a benefit workers value.</p>
+          <ul class="svc-bullets">
+            <li>Keeps workers energized through long shifts</li>
+            <li>No cash handling — fully cashless operation</li>
+            <li>Reliable in demanding environments</li>
+            <li>Zero cost and zero admin overhead</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Get Started →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="callout-strip">
+  <div class="section-inner text-center reveal" style="position:relative;z-index:2;">
+    <p class="eyebrow">Don't See Your Space?</p>
+    <h2 class="callout-h2">We Serve Any<br><span class="grad-text">High-Traffic Location</span></h2>
+    <p style="color:var(--muted);max-width:480px;margin:0 auto 2rem;">Medical offices, schools, retail stores — if people spend time there, we can put a cooler in it.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+      <a href="our-ai-smart-coolers.html" class="btn-ghost">See the Cooler</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+    <div>
+      <a href="index.html" class="logo-link" aria-label="Snack Ninja Vending Home" style="margin-bottom:0.75rem;">
+        <img src="images/ninja head logo transparent.png" alt="" class="logo-icon" />
+        <div class="logo-text-stack">
+          <span class="logo-name">SNACK <span>NINJA</span></span>
+          <span class="logo-subtext">Vending</span>
+        </div>
+      </a>
+      <p style="max-width:240px;margin-top:0.75rem;font-size:0.875rem;color:var(--muted);line-height:1.6;">Smart Vending Solutions for Modern Spaces.<br>AI-powered. Zero cost. Fully managed.</p>
+    </div>
+    <div>
+      <p class="footer-col-head">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="our-ai-smart-coolers.html" class="nav-link">Smart Coolers</a></li>
+        <li><a href="our-process.html" class="nav-link">Our Process</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:SnackNinjaVending@gmail.com" class="nav-link">SnackNinjaVending@gmail.com</a></li>
+        <li><a href="tel:5023543244" class="nav-link">502.354.3244</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Snack Ninja Vending LLC. All rights reserved.</p>
+    <p>Louisville, KY · <span class="cyan">502</span>.354.3244</p>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
+
