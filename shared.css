@@ -200,7 +200,7 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 2rem;
 }
 .logo-link        { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
-.logo-icon        { width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; }
+.logo-icon        { width: 68px; height: 68px; object-fit: contain; flex-shrink: 0; background: #ffffff; border-radius: 50%; padding: 4px; }
 .logo-text-stack  { display: flex; flex-direction: column; line-height: 1; }
 .logo-name        { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.07em; color: var(--white); }
 .logo-name span   { color: var(--cyan); }
