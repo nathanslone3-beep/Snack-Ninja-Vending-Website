@@ -94,3 +94,32 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+/* ── Lightbox ────────────────────────────────── */
+const lightboxOverlay = document.createElement('div');
+lightboxOverlay.className = 'lightbox-overlay';
+lightboxOverlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="" />';
+document.body.appendChild(lightboxOverlay);
+
+const lightboxImg = lightboxOverlay.querySelector('img');
+const lightboxClose = lightboxOverlay.querySelector('.lightbox-close');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightboxOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-lightbox]').forEach(el => {
+  el.addEventListener('click', () => openLightbox(el.dataset.lightbox, el.dataset.lightboxAlt));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverlay) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
