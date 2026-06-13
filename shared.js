@@ -123,3 +123,44 @@ document.querySelectorAll('[data-lightbox]').forEach(el => {
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverlay) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+/* ── Hero Gallery Slider ─────────────────────── */
+(function () {
+  const track = document.querySelector('.hero-gallery-track');
+  const dotsContainer = document.querySelector('.hero-gallery-dots');
+  if (!track || !dotsContainer) return;
+
+  const slides = track.querySelectorAll('.hero-gallery-slide');
+  const total = slides.length;
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'hero-gallery-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dotsContainer.querySelectorAll('.hero-gallery-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+
+  function startTimer() { timer = setInterval(next, 3500); }
+  function resetTimer() { clearInterval(timer); startTimer(); }
+
+  startTimer();
+
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const delta = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) { delta > 0 ? goTo(current + 1) : goTo(current - 1); resetTimer(); }
+  });
+})();

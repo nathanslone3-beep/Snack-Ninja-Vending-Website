@@ -101,6 +101,7 @@
               drop-shadow(0 0 40px rgba(37,99,235,0.5));
     }
 
+    .hero-gallery { display: none; }
     @media (max-width: 900px) {
       .hero { height: auto; min-height: 100vh; }
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; padding: 2rem; }
@@ -110,6 +111,17 @@
       .btn-row { flex-direction: column; align-items: stretch; }
       .btn-primary, .btn-ghost { justify-content: center; }
       .hero-visual { display: none; }
+      .hero-gallery {
+        display: block; width: 100%; height: 240px;
+        border-radius: 12px; overflow: hidden;
+        margin-bottom: 1.5rem; position: relative;
+      }
+      .hero-gallery-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+      .hero-gallery-slide { min-width: 100%; height: 100%; }
+      .hero-gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
+      .hero-gallery-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; }
+      .hero-gallery-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s; }
+      .hero-gallery-dot.active { background: var(--cyan); }
     }
     @media (max-width: 480px) {
       .hero { padding-top: 5rem; padding-bottom: 2rem; }
@@ -342,6 +354,15 @@
   <div class="hero-grid-lines"></div>
   <div class="hero-inner">
     <div class="hero-copy">
+      <div class="hero-gallery">
+        <div class="hero-gallery-track">
+          <div class="hero-gallery-slide"><img src="images/Gallery photos/Area 502 front.jpeg" alt="Snack Ninja smart cooler front view" /></div>
+          <div class="hero-gallery-slide"><img src="images/Gallery photos/Area 502 side.jpeg" alt="Snack Ninja smart cooler side view" /></div>
+          <div class="hero-gallery-slide"><img src="images/Gallery photos/machine-collage.png" alt="Snack Ninja vending machines" /></div>
+          <div class="hero-gallery-slide"><img src="images/Gallery photos/Image-1.jpg" alt="Snack Ninja vending machine" /></div>
+        </div>
+        <div class="hero-gallery-dots"></div>
+      </div>
       <h1 class="hero-h1">AI-Powered Convenience<br><span class="grad-text">For Modern Spaces.</span></h1>
       <p class="hero-sub">AI-powered smart coolers for offices, apartments, gyms, hotels, and warehouses — installed free, stocked by us, running 24/7.</p>
       <div class="btn-row">
