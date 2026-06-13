@@ -117,7 +117,7 @@
         margin-bottom: 1.5rem; position: relative;
       }
       .hero-gallery-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
-      .hero-gallery-slide { min-width: 100%; height: 100%; }
+      .hero-gallery-slide { min-width: 100%; height: 100%; cursor: zoom-in; }
       .hero-gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
       .hero-gallery-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; }
       .hero-gallery-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.3s; }
@@ -356,10 +356,10 @@
     <div class="hero-copy">
       <div class="hero-gallery">
         <div class="hero-gallery-track">
-          <div class="hero-gallery-slide"><img src="images/Gallery photos/Area 502 front.jpeg" alt="Snack Ninja smart cooler front view" /></div>
-          <div class="hero-gallery-slide"><img src="images/Gallery photos/Area 502 side.jpeg" alt="Snack Ninja smart cooler side view" /></div>
-          <div class="hero-gallery-slide"><img src="images/Gallery photos/machine-collage.png" alt="Snack Ninja vending machines" /></div>
-          <div class="hero-gallery-slide"><img src="images/Gallery photos/Image-1.jpg" alt="Snack Ninja vending machine" /></div>
+          <div class="hero-gallery-slide" data-lightbox="images/Gallery photos/Area 502 front.jpeg" data-lightbox-alt="Snack Ninja smart cooler front view"><img src="images/Gallery photos/Area 502 front.jpeg" alt="Snack Ninja smart cooler front view" /></div>
+          <div class="hero-gallery-slide" data-lightbox="images/Gallery photos/Area 502 side.jpeg" data-lightbox-alt="Snack Ninja smart cooler side view"><img src="images/Gallery photos/Area 502 side.jpeg" alt="Snack Ninja smart cooler side view" /></div>
+          <div class="hero-gallery-slide" data-lightbox="images/Gallery photos/machine-collage.png" data-lightbox-alt="Snack Ninja vending machines"><img src="images/Gallery photos/machine-collage.png" alt="Snack Ninja vending machines" /></div>
+          <div class="hero-gallery-slide" data-lightbox="images/Gallery photos/Image-1.jpg" data-lightbox-alt="Snack Ninja vending machine"><img src="images/Gallery photos/Image-1.jpg" alt="Snack Ninja vending machine" /></div>
         </div>
         <div class="hero-gallery-dots"></div>
       </div>
