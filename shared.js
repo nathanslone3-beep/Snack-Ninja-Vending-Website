@@ -181,15 +181,25 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
     }
   }, { passive: false });
 
+  let justSwiped = false;
+
   track.addEventListener('touchend', e => {
     const delta = touchStartX - e.changedTouches[0].clientX;
     track.style.transition = '';
-    if (dragging && Math.abs(delta) > 40) {
-      delta > 0 ? goTo(current + 1) : goTo(current - 1);
-      resetTimer();
-    } else {
-      goTo(current);
+    if (dragging) {
+      justSwiped = true;
+      setTimeout(() => { justSwiped = false; }, 300);
+      if (Math.abs(delta) > 30) {
+        delta > 0 ? goTo(current + 1) : goTo(current - 1);
+        resetTimer();
+      } else {
+        goTo(current);
+      }
     }
     dragging = false;
   });
+
+  track.addEventListener('click', e => {
+    if (justSwiped) { e.stopPropagation(); justSwiped = false; }
+  }, true);
 })();
