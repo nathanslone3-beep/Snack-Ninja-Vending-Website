@@ -158,9 +158,38 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
   startTimer();
 
   let touchStartX = 0;
-  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  let touchStartY = 0;
+  let dragging = false;
+
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    dragging = false;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', e => {
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (!dragging && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
+      dragging = true;
+    }
+    if (dragging) {
+      e.preventDefault();
+      const pct = (dx / track.offsetWidth) * 100;
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(' + (-current * 100 + pct) + '%)';
+    }
+  }, { passive: false });
+
   track.addEventListener('touchend', e => {
     const delta = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(delta) > 40) { delta > 0 ? goTo(current + 1) : goTo(current - 1); resetTimer(); }
+    track.style.transition = '';
+    if (dragging && Math.abs(delta) > 40) {
+      delta > 0 ? goTo(current + 1) : goTo(current - 1);
+      resetTimer();
+    } else {
+      goTo(current);
+    }
+    dragging = false;
   });
 })();
