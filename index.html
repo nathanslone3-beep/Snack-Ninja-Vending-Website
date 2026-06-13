@@ -58,15 +58,6 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
       position: relative; z-index: 2; width: 100%;
     }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(0,191,255,0.08); border: 1px solid rgba(0,191,255,0.25);
-      border-radius: 4px; padding: 0.35rem 0.875rem;
-      font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan);
-      margin-bottom: 1.5rem;
-    }
-    .hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); display: block; animation: blink 2s ease-in-out infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
     .hero-h1 {
@@ -118,14 +109,14 @@
       .hero-stat-div { display: none; }
       .btn-row { flex-direction: column; align-items: stretch; }
       .btn-primary, .btn-ghost { justify-content: center; }
-      .hero-visual { order: -1; }
-      .hero-machine { max-width: 360px; }
-      .hero-ring { width: 320px; height: 320px; }
-      .hero-halo { width: 340px; height: 340px; }
+      .hero-visual { display: none; }
     }
     @media (max-width: 480px) {
-      .hero { padding-top: 5rem; }
-      .hero-inner { padding: 1.25rem; }
+      .hero { padding-top: 5rem; padding-bottom: 2rem; }
+      .hero-inner { padding: 1.25rem; gap: 1rem; }
+      .hero-h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); margin-bottom: 0.75rem; }
+      .hero-sub { margin-bottom: 1.25rem; font-size: 0.9rem; }
+      .btn-row { gap: 0.75rem; }
       .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; justify-items: center; }
       .hero-stat-val { font-size: 1.6rem; }
     }
@@ -351,7 +342,6 @@
   <div class="hero-grid-lines"></div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="hero-tag"><span></span>Louisville, KY · AI-Powered Vending</div>
       <h1 class="hero-h1">AI-Powered Convenience<br><span class="grad-text">For Modern Spaces.</span></h1>
       <p class="hero-sub">AI-powered smart coolers for offices, apartments, gyms, hotels, and warehouses — installed free, stocked by us, running 24/7.</p>
       <div class="btn-row">
