@@ -280,12 +280,33 @@
 
 <script src="shared.js"></script>
 <script>
-  document.getElementById('ctForm').addEventListener('submit', function(e) {
+  document.getElementById('ctForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    document.getElementById('ctFormWrap').style.display = 'none';
-    const s = document.getElementById('ctSuccess');
-    s.classList.add('show');
-    s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const form = e.target;
+    const btn = form.querySelector('.ct-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xeebabpe', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('ctFormWrap').style.display = 'none';
+        const s = document.getElementById('ctSuccess');
+        s.classList.add('show');
+        s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        btn.textContent = 'Submit Free Request →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us at SnackNinjaVending@gmail.com');
+      }
+    } catch {
+      btn.textContent = 'Submit Free Request →';
+      btn.disabled = false;
+      alert('Something went wrong. Please email us at SnackNinjaVending@gmail.com');
+    }
   });
 </script>
 </body>
